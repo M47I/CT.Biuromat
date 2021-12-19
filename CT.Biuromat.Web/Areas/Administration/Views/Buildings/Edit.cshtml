@@ -1,0 +1,30 @@
+﻿@model BuildingsEditVm
+@{
+    ViewBag.Title = "title";
+}
+
+<a asp-action="Details" asp-route-id="@Model.Id">
+    wróć do listy detali budynku
+</a>
+<h2>
+    Edycja budynku @Model.Name
+</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Name">
+            Nazwa
+        </label>
+        <input class="form-control" asp-for="Name"/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">
+            Adres
+        </label>
+        <input class="form-control" asp-for="Address"/>
+    </div>
+    <button type="submit">
+        zapisz zmiany
+    </button>
+</form>

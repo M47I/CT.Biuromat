@@ -1,0 +1,45 @@
+﻿@model BuildingsDetailsVm
+@{
+    ViewBag.Title = "title";
+}
+
+<a asp-action="Index">
+    wróć do listy budynków
+</a>
+<br/>
+<a asp-action="Edit" asp-route-id="@Model.Building.Id">
+    edytuj dane
+</a>
+<br/>
+<a asp-action="Remove" asp-route-id="@Model.Building.Id">
+    usuwanie miękkie
+</a>
+<h2>
+    Budynek: @Model.Building.Name
+</h2>
+
+<p>
+    <strong>
+        Nazwa:
+    </strong>
+    @Model.Building.Name
+</p>
+<p>
+    <strong>
+        Adres:
+    </strong>
+    @Model.Building.Address
+</p>
+<p>
+    <strong>
+        Data utworzenia: 
+    </strong>
+    @Model.Building.CreatedAt
+</p>
+<p>
+    <strong>
+        Ostatnia zmiania:
+    </strong>
+    @Model.Building.UpdatedAt
+</p>
+

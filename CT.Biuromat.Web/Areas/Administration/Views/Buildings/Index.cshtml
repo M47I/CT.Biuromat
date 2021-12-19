@@ -1,0 +1,60 @@
+﻿@model BuildingsIndexVm
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>
+    Lista budynków
+</h2>
+
+<a asp-action="Create">
+    dodaj nowy budynek
+</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Nazwa
+        </th>
+        <th>
+            Adres
+        </th>
+        <th>
+            Data utworzenia
+        </th>
+        <th>
+            Ostatnia zmiania
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    @foreach (var building in Model.Buildings)
+    {
+        <tr>
+            <td>
+                @building.Id
+            </td>
+            <th>
+                @building.Name
+            </th>
+            <td>
+                @building.Address
+            </td>
+            <td>
+                @building.CreatedAt
+            </td>
+            <td>
+                @building.UpdatedAt
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@building.Id">
+                    otwórz
+                </a>
+            </td>
+        </tr>
+    }
+</table>
